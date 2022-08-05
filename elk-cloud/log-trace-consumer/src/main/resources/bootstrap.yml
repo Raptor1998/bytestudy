@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: log-trace-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #服务注册中心地址
+        group: elk
+#      config:
+#        server-addr: localhost:8848 #配置中心地址
+#
+#        namespace: f4929bc6-8770-4474-821d-fef18fdcffc6
+#        ext-config:
+#          - data-id: log-trace-demo.yaml
+#            group: dev
+#            refresh: true

@@ -1,0 +1,36 @@
+server:
+  port: 9004
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #配置Nacos地址
+        group: elk
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: log-trace-consumer
+          uri: lb://log-trace-consumer
+          predicates:
+            - Path=/consumer/**
+          filters:
+            - RewritePath=/?(?<segment>.*), /$\{segment}
+        - id: log-trace-demo
+          uri: lb://log-trace-demo
+          predicates:
+            - Path=/log/**
+          filters:
+            - RewritePath=/?(?<segment>.*), /$\{segment}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+

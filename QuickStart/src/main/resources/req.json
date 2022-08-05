@@ -1,0 +1,15 @@
+{
+    "app_recommend_faqs": [
+        {
+            "app_code": "tiktok_ads_ama",
+            "recommend_detail": [
+                {
+                    "category_id": 8,
+                    "faq_ids": [
+                        843
+                    ]
+                }
+            ]
+        }
+    ]
+}

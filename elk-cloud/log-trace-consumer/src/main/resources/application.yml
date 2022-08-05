@@ -1,0 +1,22 @@
+server:
+  port: 9003
+
+spring:
+  application:
+    name: log-trace-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #配置Nacos地址
+
+service-url:
+  nacos-user-service: http://log-trace-demo
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
+logging:
+  config: classpath:logback-log.xml
