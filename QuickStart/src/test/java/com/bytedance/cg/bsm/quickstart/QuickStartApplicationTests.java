@@ -20,7 +20,7 @@ class QuickStartApplicationTests {
     @Test
     public void context2() {
         int info = userService.getUserInfo();
-        if (info == 1){
+        if (info == 2){
             throw new RuntimeException("unknown error");
         }
     }
